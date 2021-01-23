@@ -1,6 +1,6 @@
 ---
 title: Martin's personal site
-template: article
+type: article
 
 ---
 

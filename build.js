@@ -21,9 +21,9 @@ for (const mdFilePath of glob.sync("dist/**/*.md")) {
 	const metadata = converter.getMetadata()
 	const outputFilePath = mdFilePath.replace(/\.md$/, ".html")
 	console.log(`* Out: ${outputFilePath}`)
-	let output = templates[metadata.template]
+	let output = templates[metadata.type]
 	if (!output) {
-		throw new Error(`Cannot find template "${metadata.template}"`)
+		throw new Error(`Cannot find template for type "${metadata.type}"`)
 	}
 	for (const match of output.match(/({{.*?}})/g)) {
 		const key = match.replace("{{", "").replace("}}", "")

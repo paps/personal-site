@@ -1,6 +1,6 @@
 ---
 title: Yooo
-template: article
+type: article
 
 ---
 
