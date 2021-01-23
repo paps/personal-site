@@ -2,7 +2,7 @@
   "name": "personal-site",
   "private": true,
   "version": "1.0.0",
-  "description": "",
+  "description": "Martin's personal site",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/paps/personal-site.git"
@@ -18,7 +18,7 @@
     "showdown": "^1.9.1"
   },
   "scripts": {
-    "build": "rm -r dist ; cp -r src dist ; node index.js"
+    "build": "rm -r dist ; cp -r src dist ; node build.js"
   },
   "eslintConfig": {
     "parserOptions": {

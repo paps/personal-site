@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>HB v2</title>
+		<link rel="icon" type="image/png" href="../landing/favicon.png" />
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://code.responsivevoice.org/responsivevoice.js?key=Ca4sZdSs"></script>
+	</head>
+	<body style="text-align: center; margin-top: 40px; font-size: 25px;">
+		<form id="form" autocomplete="off">
+			Code <input id="code" type="number" style="font-size: 25px; width: 100px;" min="0" max="9999" />
+			<input type="submit" style="font-size: 20px;" value="OK" />
+		</form>
+		<p id="result" style="display: none;">
+			<strong style="font-size: 40px;">HB <span id="theone"></span></strong>
+			<br /><br />
+			<a id="ledire" href="#">🔊 Le dire</a>
+			<br /><br />
+			<a href=".">🔙</a>
+		</p>
+		<script>
+			$(document).ready(function() {
+				var birthdays = {
+					"1001": "Jean-Marc",
+					"2412": "Brigitte",
+					"0402": "Cécile",
+					"2002": "Audrey",
+					"1303": "Astrid",
+					"1806": "Thomas",
+					"0106": "Mart1",
+					"2004": "Clément",
+					"2807": "Anne",
+				};
+				$("#form").on("submit", function() {
+					var code = $("#code").val();
+					if (birthdays[code]) {
+						$("#theone").text(birthdays[code]);
+						$("#form").hide("slow", function() {
+							console.log("A")
+							$("#result").show("slow");
+						});
+					} else {
+						alert("Hey ! C'est pas ton anniversaire !");
+						$("#code").val("");
+					}
+					return false;
+				});
+				$("#ledire").click(function() {
+					responsiveVoice.speak("HB " + $("#theone").text(), "French Male", { rate: 0.75 });
+				});
+			});
+		</script>
+	</body>
+</html>
