@@ -3,6 +3,6 @@
     "silent": true,
     "autoJobCancelation": true
   },
-  "trailingSlash": true,
+  "trailingSlash": false,
   "cleanUrls": true
 }
